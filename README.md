@@ -43,4 +43,3 @@ Please note that the following guidelines/recommendations are not "official" in 
 - Use 0603 SMD components wherever possible
 - Try to use E12-series resistor, capacitor and inductor values
 - Create a BOM containing at least the part's reference designator, part name/number and resistance/capacitance value
-- Add one more ground pad
