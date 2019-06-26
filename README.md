@@ -2,37 +2,40 @@
 This list contains awesome pcb-design related things.
 
 ## Content
-- [ICs and Components](#ICs\ and\ Components)
-- [PCB Manufacturing](#PCB\ Manufacturing)
-- [PCB Assembly](#PCB\ Assembly)
+- [ICs and Components](#components)
+- [Part shops](#shops)
+- [PCB Manufacturing](#manufacturing)
+- [PCB Assembly](#assembly)
+- [EDA Software](#software)
+- [Design Guidelines](#guidelines)
 
-## ICs and Components
+## <a name="components"></a>ICs and Components
 - **LM317T** linear power supply, widely available and known
 - **‎W25Q series** SPI flash memory
 
-## Part shops
+##  <a name="shops"></a>Part shops
 - [Digikey](https://digikey.com) they have pretty much everything, US based
 - [LCSC](https://lcsc.com) very cheap and good assortment of parts, from China
 
-## PCB Manufacturing
+## <a name="manufacturing"></a>PCB Manufacturing
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb manufacturers
 - [JLCPCB](https://jlcpcb.com/) 2$ for 10 PCBs
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
 
-## PCB Assembly
+## <a name="assembly"></a>PCB Assembly
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb assemblers
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
 
-## EDA Software
+## <a name="software"></a>EDA Software
 - [KiCAD](http://kicad-pcb.org/) free and open source EDA software, had some pretty big updates and improvements recently
 - [geda](http://pcb.geda-project.org/) free and open source
 - [EAGLE](https://www.autodesk.de/products/eagle/free-download) free for smaller boards
-- Altium Designer, expensive
-- Orcad, expensive
+- Altium Designer, not free or open source
+- Orcad, not free or open source
 
-## PCB Design guidelines/recommendations
+## <a name="guidelines"></a>PCB Design guidelines/recommendations
 Please note that the following guidelines/recommendations are not "official" in any way. They are merely the result of my own experience designing PCBs.
 - Add test pads for power, ground and important signals
 - Put pin names on the PCB
