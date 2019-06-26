@@ -25,6 +25,13 @@ This list contains awesome pcb-design related things.
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
 
+## EDA Software
+- [KiCAD](http://kicad-pcb.org/) free and open source EDA software, had some pretty big updates and improvements recently
+- [geda](http://pcb.geda-project.org/) free and open source
+- [EAGLE](https://www.autodesk.de/products/eagle/free-download) free for smaller boards
+- Altium Designer, expensive
+- Orcad, expensive
+
 ## PCB Design guidelines/recommendations
 Please note that the following guidelines/recommendations are not "official" in any way. They are merely the result of my own experience designing PCBs.
 - Add test pads for power, ground and important signals
