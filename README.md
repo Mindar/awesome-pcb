@@ -12,6 +12,11 @@ This list contains awesome pcb-design related things.
 ## <a name="components"></a>ICs and Components
 - **LM317T** linear power supply, widely available and known
 - **‎W25Q series** SPI flash memory
+- **‎STM32F103C8T6** Cheap microcontroller, same as on bluepills, 48 Mhz, ADC, I<sup>2</sup>C, SPI, USB
+- **STM32F417** Bigger and faster alternative for the F103, F417/F427 have crypto hardware, F407 does not, 168 Mhz, ADC/DAC, I<sup>2</sup>C, SPI, USB, Ethernet
+- **STM32F767** Bigger and even faster than the F417, Nucleo Board available
+- **‎FQP30N06L** Logic Level Mosfet V<sub>DSS</sub> 60V, I<sub>D</sub> 32A, R<sub>on</sub> 35mOhm, V<sub>gs<sub>th</sub></sub> < 2.5V, around 10A @ 3.3V V<sub>gs</sub>
+- **LM358** Simple dual OpAmp, not great, not terrible
 
 ##  <a name="shops"></a>Part shops
 - [Digikey](https://digikey.com) they have pretty much everything, US based
