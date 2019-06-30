@@ -10,12 +10,26 @@ This list contains awesome pcb-design related things.
 - [Design Guidelines](#guidelines)
 
 ## <a name="components"></a>ICs and Components
-- **LM317T** linear power supply, widely available and known
+### <a name="components_voltage_regulators"></a>Voltage Regulators
+- **LM317T** variable linear power supply, widely available
+- **LM78xx** fixed voltage linear power supply, available in 3.3V, 5V and 12V (and many other voltages)
+- **LM2596** Buck Converter, variable output voltage 1.23V - 37V, 3A max output, 40V max input
+**LT1767** Monolithing 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
+
+### <a name="components_computing_storing"></a>Computing/Storage
 - **‎W25Q series** SPI flash memory
 - **‎STM32F103C8T6** Cheap microcontroller, same as on bluepills, 48 Mhz, ADC, I<sup>2</sup>C, SPI, USB
 - **STM32F417** Bigger and faster alternative for the F103, F417/F427 have crypto hardware, F407 does not, 168 Mhz, ADC/DAC, I<sup>2</sup>C, SPI, USB, Ethernet
 - **STM32F767** Bigger and even faster than the F417, Nucleo Board available
-- **‎FQP30N06L** Logic Level Mosfet V<sub>DSS</sub> 60V, I<sub>D</sub> 32A, R<sub>on</sub> 35mOhm, V<sub>gs<sub>th</sub></sub> < 2.5V, around 10A @ 3.3V V<sub>gs</sub>
+- **STM32G0 series** Next generation alternative for STM's _F0_ series.
+
+### <a name="components_mosfet"></a>Mosfets & Switches
+- **‎FQP30N06L** Beefy logic level mosfet V<sub>DSS</sub> 60V, I<sub>D</sub> 32A, R<sub>on</sub> 35mOhm, V<sub>gs<sub>th</sub></sub> < 2.5V, around 10A @ 3.3V V<sub>gs</sub>
+- **BSS806NE** Super low threshold voltage, small package, V<sub>gs<sub>th</sub></sub> < 0.75V, V<sub>DS</sub> 20V, I<sub>D</sub> 2.3A
+- **LTC2950** Pushbutton On/Off controller, adjustable turn on/off timers, debounced, µController interrupt & turn off pins, 2.7V - 26.4V
+- **IS31FL3741** 39x9 dot matrix led driver, drives 351 leds or 117 rgb leds, I2C interface
+
+### <a name="components_opamp"></a>Operational Amplifiers
 - **LM358** Simple dual OpAmp, not great, not terrible
 
 ##  <a name="shops"></a>Part shops
