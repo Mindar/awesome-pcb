@@ -14,7 +14,7 @@ This list contains awesome pcb-design related things.
 - **LM317T** variable linear power supply, widely available
 - **LM78xx** fixed voltage linear power supply, available in 3.3V, 5V and 12V (and many other voltages)
 - **LM2596** Buck Converter, variable output voltage 1.23V - 37V, 3A max output, 40V max input
-**LT1767** Monolithing 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
+**LT1767** Monolithic 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
 
 ### <a name="components_computing_storing"></a>Computing/Storage
 - **‎W25Q series** SPI flash memory
@@ -28,6 +28,14 @@ This list contains awesome pcb-design related things.
 - **BSS806NE** Super low threshold voltage, small package, V<sub>gs<sub>th</sub></sub> < 0.75V, V<sub>DS</sub> 20V, I<sub>D</sub> 2.3A
 - **LTC2950** Pushbutton On/Off controller, adjustable turn on/off timers, debounced, µController interrupt & turn off pins, 2.7V - 26.4V
 - **IS31FL3741** 39x9 dot matrix led driver, drives 351 leds or 117 rgb leds, I2C interface
+- **IRFP260** Really super enormously beefy Mosfet. Suitable for linear operation, e.g. in electronic loads. TO-247 package
+- **FQL40N50** Linear Mosfet, but even beefier than the IRFP260
+
+### <a name="components_mosfet"></a>RF Parts
+- **ADL5544** Wideband RF gain block, 30 MHz - 6 GHz, fixed gain of 17.4 dB
+- **SKY13345-368LF**  0.1-3.5 GHz SP3T Switch
+- **AS211-334** 0.1 to 4.0 GHz pHEMT SPDT Switch
+
 
 ### <a name="components_opamp"></a>Operational Amplifiers
 - **LM358** Simple dual OpAmp, not great, not terrible
@@ -44,6 +52,7 @@ This list contains awesome pcb-design related things.
 
 ## <a name="assembly"></a>PCB Assembly
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb assemblers
+- [JLCPCB](https://jlcpcb.com/)
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
 
@@ -55,20 +64,36 @@ This list contains awesome pcb-design related things.
 - Orcad, not free or open source
 
 ## <a name="guidelines"></a>PCB Design guidelines/recommendations
-Please note that the following guidelines/recommendations are not "official" in any way. They are merely the result of my own experience designing PCBs.
+Please note that the following guidelines/recommendations are the result of my own experience designing pcbs.
 - Add test pads for power, ground and important signals
 - Put pin names on the PCB
 - Put reference designators for every component on the PCB
-- Don't use text smaller than 1mm
+- Don't use text smaller than 0.8mm
 - Add more test pads for ground (and other voltages/signals)
 - Put polarity icon(s) on the silkscreen next to power connections
 - Put min and max voltage on the silkscreen next to power connections
 - Put max current on the silkscreen next to power connections
 - Put version text on the silkscreen
-- Add more (ground) test pads
+- Add even more ground test pads
 - Round all pcb corners
 - Place M4 mounting holes on diagonal ends of the PCB or preferrably in all 4 corners
 - More. Ground. Testpads.
 - Use 0603 SMD components wherever possible
 - Try to use E12-series resistor, capacitor and inductor values
 - Create a BOM containing at least the part's reference designator, part name/number and resistance/capacitance value
+- When designing break-away sections, use a slot of at least 2mm width, for tabs add mousebites/vias in line with the board edge
+- Create at least an A4 summary of the documentation
+
+## Status LEDs
+- Make LEDs as dark as possible and as bright as necessary. Status LEDs should not be bright enough to illuminate anything, only bright enough to recognize they're on.
+- Status LEDs should emit diffuse light, if possible add a diffusor like milky-white acrylic glass.
+- Add a power LED that shows when the device is receiving power
+- Add red LEDs that indicate devices that record things such as video, audio or GPS tracks. Bonus points for devices that record other data such as acceleration data, voltage, current and others. Red means its recording.
+- Don't let LEDs blink unless there is a fault. Faults should always be indicated by blinking LEDs
+
+|Color|Meaning|
+|---|---|
+|green (continuous)| - status is nominal<br>- device/function is turned on |
+|yellow (continous)| - abnormal status<br>- device pausing abnormally<br>- possible fault indication|
+|red (continuous)| - camera/microphone/device is recording |
+|red (blinking)| - device is stopped or stopping due to critical fault (e.g. emergency stop was pressed) |
