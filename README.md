@@ -1,5 +1,6 @@
 # Awesome PCB
 This list contains awesome pcb-design related things.
+If you know some cool thing that's related to PCB design, feel free to add it. Pull requests welcome.
 
 ## Content
 - [ICs and Components](#components)
@@ -14,7 +15,7 @@ This list contains awesome pcb-design related things.
 - **LM317T** variable linear power supply, widely available
 - **LM78xx** fixed voltage linear power supply, available in 3.3V, 5V and 12V (and many other voltages)
 - **LM2596** Buck Converter, variable output voltage 1.23V - 37V, 3A max output, 40V max input
-**LT1767** Monolithic 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
++**LT1767** Monolithic 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
 
 ### <a name="components_computing_storing"></a>Computing/Storage
 - **‎W25Q series** SPI flash memory
@@ -36,9 +37,14 @@ This list contains awesome pcb-design related things.
 - **SKY13345-368LF**  0.1-3.5 GHz SP3T Switch
 - **AS211-334** 0.1 to 4.0 GHz pHEMT SPDT Switch
 
-
 ### <a name="components_opamp"></a>Operational Amplifiers
 - **LM358** Simple dual OpAmp, not great, not terrible
+- **OPA2206** ±40V Precision OpAmp, similar to LM358, but better in every way
+- **LMV611** Rail-2-Rail OpAmp up to +5V
+- **OPA2277** Dual Precision OpAmp, 10µV Offset, 0.1µV/°C Drift, +36V/±18V Supply Range, affordable at ~1€
+
+### <a name="components_sensors"></a>Sensors
+- MCP9700 Temperature Sensor
 
 ##  <a name="shops"></a>Part shops
 - [Digikey](https://digikey.com) they have pretty much everything, US based
@@ -46,7 +52,9 @@ This list contains awesome pcb-design related things.
 
 ## <a name="manufacturing"></a>PCB Manufacturing
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb manufacturers
-- [JLCPCB](https://jlcpcb.com/) 2$ for 10 PCBs
+- [JLCPCB](https://jlcpcb.com/) Super affordable PCBs from China, multiple colors including matte black, 2$ for 5 PCBs
+- [Aisler](https://aisler.net/) High Quality PCBs from Germany
+- [Oshpark](https://oshpark.com/) High Quality PCBs from the US, "After Dark" style, can do Flex-PCB at $10/square inch
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
 
@@ -86,14 +94,14 @@ Please note that the following guidelines/recommendations are the result of my o
 
 ## Status LEDs
 - Make LEDs as dark as possible and as bright as necessary. Status LEDs should not be bright enough to illuminate anything, only bright enough to recognize they're on.
-- Status LEDs should emit diffuse light, if possible add a diffusor like milky-white acrylic glass.
+- Status LEDs should emit diffuse light, if possible add a diffusor like milky-white acrylic glass to your enclosure
 - Add a power LED that shows when the device is receiving power
-- Add red LEDs that indicate devices that record things such as video, audio or GPS tracks. Bonus points for devices that record other data such as acceleration data, voltage, current and others. Red means its recording.
-- Don't let LEDs blink unless there is a fault. Faults should always be indicated by blinking LEDs
+- Add red LEDs that indicate devices that record things such as video, audio or GPS tracks. Bonus points for devices that record other data such as acceleration data, voltage, current and others. Continuous red means its recording.
+- Don't let LEDs blink unless there is a fault. Faults should always be indicated by blinking LEDs. One exception to this guideline are status LEDs for things like UART TX/RX line or Ethernet Connections.
 
 |Color|Meaning|
 |---|---|
 |green (continuous)| - status is nominal<br>- device/function is turned on |
-|yellow (continous)| - abnormal status<br>- device pausing abnormally<br>- possible fault indication|
-|red (continuous)| - camera/microphone/device is recording |
-|red (blinking)| - device is stopped or stopping due to critical fault (e.g. emergency stop was pressed) |
+|yellow (continous)| - abnormal status<br>- device pausing abnormally<br>- possible fault indication<br>- warning|
+|red (continuous)| - camera/microphone/device is recording<br>- error state, immediate attention is **not** required |
+|red (blinking)| - device is stopped or stopping due to critical fault (e.g. emergency stop was pressed). Immediate Attention is required.|
