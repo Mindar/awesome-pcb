@@ -46,9 +46,22 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 ### <a name="components_sensors"></a>Sensors
 - MCP9700 Temperature Sensor
 
+### <a name="components_connectors"></a>Connectors
+Distributors sell all sorts of connectors. There is a special connector for almost any application you could think of. However most of the time you don't need anything special, you just need something that works. Often a simple pin header/socket does the job. But sometimes your applicaiton is just a tiny bit more demanding. The connectors in this category fulfil such purposes. They're not special-purpose, but they do have some advantages over regular pin headers.
+- **Molex 6410 Series** PCB pin headers (mates with **2695 Series** connectors) are polarized connectors that are somewhat compatible with pin headers (both have a 2.54mm spacing). If you use both socket and connector you can't plug things in the wrong way. Connector Part Number: 22012xx1 where xx is the number of pins e.g. 04 to get 4 Pins. Pin header part number is 22272xx1, where xx is the number of pins.
+- **Ningbo Kangnex Elec WJ15EDGK-3.81 Series** They are pluggable screwterminals and can deal with quite a bit of current (5A and more per pin). They are also polarized so plugging them in the wrong way is impossible. The PCB-side receptacle is called WJ15EDGRC-3.81-4P, where 4P gives the number of pins (4 in this case). The screw-terminal-plug is called WJ15EDGK-3.81-4P. Once again the 4P means 4 pins. They are also availble in right-angle versions (WJ15EDGVC-3.81-4P and WJ15EDGKA-3.81-4P). There is also a version that can be locked in place with screws (WJEDGKM-3.81-4P and WJ15EDGRM-3.81-4P). They are available in many pin counts at lcsc.com. Phoenix Contact (and many other companies) has a similar product, but their product numbering sucks, so it isn't listed here.
+
+
+
+### <a name="components_other"></a>Miscellaneous
+- NHD-12232KZ-NSW-BBW-P Graphic LCD, 128x32 Pixels, fairly cheap ~14€, similar form factor to 16x2 text LCDs, 8800/6800 compatible
+
 ##  <a name="shops"></a>Part shops
 - [Digikey](https://digikey.com) they have pretty much everything, US based
 - [LCSC](https://lcsc.com) very cheap and good assortment of parts, from China
+- [Mouser](https://mouser.com) another distributor
+- [Farnell](https://de.farnell.com) another distributor
+- [RS Components](https://www.rs-online.com) They also sell lots of mechanical parts such as motors, industrial automation equipment, etc
 
 ## <a name="manufacturing"></a>PCB Manufacturing
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb manufacturers
@@ -67,30 +80,37 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 ## <a name="software"></a>EDA Software
 - [KiCAD](http://kicad-pcb.org/) free and open source EDA software, had some pretty big updates and improvements recently
 - [geda](http://pcb.geda-project.org/) free and open source
+- [Fritzing](https://fritzing.org/) free and open source if you compile it yourself. A binary download costs 9 €.
 - [EAGLE](https://www.autodesk.de/products/eagle/free-download) free for smaller boards
+- Target 3001! not open source, but free for small personal boards
 - Altium Designer, not free or open source
 - Orcad, not free or open source
 
 ## <a name="guidelines"></a>PCB Design guidelines/recommendations
 Please note that the following guidelines/recommendations are the result of my own experience designing pcbs.
-- Add test pads for power, ground and important signals
-- Put pin names on the PCB
-- Put reference designators for every component on the PCB
+- Add test pads or preferably actual test-pins for power, ground and important signals
+- Mark important test pins with a descriptive name if possible (e.g. "temperature", "V_out", "threshold set")
+- mark all pin names on the PCB
+- mark all important connectors, e.g. "Sensor-Input", "UART", "I2C", even obvious things such as "USB"
+- mark polarity of all polarized components such as diodes, connectors, electrolytic capacitors
+- clearly mark pin 1 of all ICs and connectors, preferably additionally mark IC footprints the same way the IC itself is marked (e.g. chamfered edges or pin 1 marking)
+- Put reference designators for every component on the PCB if you have the space. Otherwise create a pdf or printout of the board that contains reference designators.
 - Don't use text smaller than 0.8mm
 - Add more test pads for ground (and other voltages/signals)
-- Put polarity icon(s) on the silkscreen next to power connections
-- Put min and max voltage on the silkscreen next to power connections
-- Put max current on the silkscreen next to power connections
-- Put version text on the silkscreen
+- Put polarity icon(s) on the silkscreen next to power connections. In particular Barrel Jacks.
+- Put minimum and maximum input/output voltage on the silkscreen next to power connections. E.g. "12-24 VDC" or "48 VAC". If you have tighter voltage tolerances than 10% add it to the silkscreen.
+- Put max current draw or max current sourcing capability on the silkscreen next to power connections. e.g. "3A"
+- Put version number and date on the silkscreen. E.g. "v1.0 November 2020" or "V2 07/2015"
 - Add even more ground test pads
-- Round all pcb corners
-- Place M4 mounting holes on diagonal ends of the PCB or preferrably in all 4 corners
+- Round all external pcb corners to prevent injury. Your PCB **WILL** be handled by humans at some point. Don't skimp on this. Any injuries from sharp edges will be your fault.
+- Depending on PCB size and weight, place M2.5, M3 or M4 mounting holes on opposite ends of the PCB or preferrably in all 4 corners
 - More. Ground. Testpads.
-- Use 0603 SMD components wherever possible
-- Try to use E12-series resistor, capacitor and inductor values
-- Create a BOM containing at least the part's reference designator, part name/number and resistance/capacitance value
-- When designing break-away sections, use a slot of at least 2mm width, for tabs add mousebites/vias in line with the board edge
-- Create at least an A4 summary of the documentation
+- Use 0603 SMD components whereiver possible for automated assembly.
+- Try to use E12-series resistor, capacitor and inductor values first, bevore going to E24, E48, etc.
+- Create a BOM containing each part's reference designator, part name/number and resistance/capacitance value, manufacturer part number, seller link
+- When designing break-away sections, use a slot of at least 2mm width, for tabs add mousebites/vias **in line with the board edge** do not recess them into the board. Make sure whoever breaks it sands it down.
+- Create at least an A4 summary documentation, which should include a picture of the assembled board.
+- For microcontroller boards add a UART pin for debugging somewhere on the board
 
 ## Status LEDs
 - Make LEDs as dark as possible and as bright as necessary. Status LEDs should not be bright enough to illuminate anything, only bright enough to recognize they're on.
