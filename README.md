@@ -15,7 +15,12 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 - **LM317T** variable linear power supply, widely available
 - **LM78xx** fixed voltage linear power supply, available in 3.3V, 5V and 12V (and many other voltages)
 - **LM2596** Buck Converter, variable output voltage 1.23V - 37V, 3A max output, 40V max input
-+**LT1767** Monolithic 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
+- **LT1767** Monolithic 1.5A Step Down Regulator, 1.25 Mhz Switching frequency, Fixed output voltages of 1.8V, 2.5V, 3.3V and 5V, 2% output tolerance
+- **HT7333/HT7833** Battery-friendly LDO (low Iq)
+- **LM1117** One of most popular "jellybean" SMD LDO, available from many vendors
+- **TPS61021** Step-up that can work from single cell (up to 1.5A)
+- **TLV61220** Step-up that can work from single cell (more efficient, but less current)
+- **ME7660** Cheap charge pump for negative rail (opamp, analog switches, etc)
 
 ### <a name="components_computing_storing"></a>Computing/Storage
 - **‎W25Q series** SPI flash memory
@@ -31,6 +36,8 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 - **IS31FL3741** 39x9 dot matrix led driver, drives 351 leds or 117 rgb leds, I2C interface
 - **IRFP260** Really super enormously beefy Mosfet. Suitable for linear operation, e.g. in electronic loads. TO-247 package
 - **FQL40N50** Linear Mosfet, but even beefier than the IRFP260
+- **KIA50N03/KIA50N06** Very cost efficient beefy (30/60V and 50A!) and reasonably low Rds(on) N-FET in DPAK case
+
 
 ### <a name="components_mosfet"></a>RF Parts
 - **ADL5544** Wideband RF gain block, 30 MHz - 6 GHz, fixed gain of 17.4 dB
@@ -70,12 +77,15 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 - [Oshpark](https://oshpark.com/) High Quality PCBs from the US, "After Dark" style, can do Flex-PCB at $10/square inch
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
+- [PCBWay](pcbway.com)
 
 ## <a name="assembly"></a>PCB Assembly
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb assemblers
 - [JLCPCB](https://jlcpcb.com/)
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
+- [PCBWay](pcbway.com)
+
 
 ## <a name="software"></a>EDA Software
 - [KiCAD](http://kicad-pcb.org/) free and open source EDA software, had some pretty big updates and improvements recently
@@ -85,6 +95,7 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 - Target 3001! not open source, but free for small personal boards
 - Altium Designer, not free or open source
 - Orcad, not free or open source
+- [TopoR](https://www.eremex.com/products/topor/) Free license for small boards of hobbyists, very funny curvy traces autorouter
 
 ## <a name="guidelines"></a>PCB Design guidelines/recommendations
 Please note that the following guidelines/recommendations are the result of my own experience designing pcbs.
@@ -93,6 +104,7 @@ Please note that the following guidelines/recommendations are the result of my o
 - mark all pin names on the PCB
 - mark all important connectors, e.g. "Sensor-Input", "UART", "I2C", even obvious things such as "USB"
 - mark polarity of all polarized components such as diodes, connectors, electrolytic capacitors
+- add 3 fiducials for better PCBA using computer vision, worst case 2 is sufficient
 - clearly mark pin 1 of all ICs and connectors, preferably additionally mark IC footprints the same way the IC itself is marked (e.g. chamfered edges or pin 1 marking)
 - Put reference designators for every component on the PCB if you have the space. Otherwise create a pdf or printout of the board that contains reference designators.
 - Don't use text smaller than 0.8mm
@@ -106,11 +118,12 @@ Please note that the following guidelines/recommendations are the result of my o
 - Depending on PCB size and weight, place M2.5, M3 or M4 mounting holes on opposite ends of the PCB or preferrably in all 4 corners
 - More. Ground. Testpads.
 - Use 0603 SMD components whereiver possible for automated assembly.
+- avoid traces under components (risk of short due silkscreen wearout during prototyping/rework) which is hard to debug, interference
 - Try to use E12-series resistor, capacitor and inductor values first, bevore going to E24, E48, etc.
 - Create a BOM containing each part's reference designator, part name/number and resistance/capacitance value, manufacturer part number, seller link
 - When designing break-away sections, use a slot of at least 2mm width, for tabs add mousebites/vias **in line with the board edge** do not recess them into the board. Make sure whoever breaks it sands it down.
 - Create at least an A4 summary documentation, which should include a picture of the assembled board.
-- For microcontroller boards add a UART pin for debugging somewhere on the board
+- For microcontroller boards add a UART/JTAG/SWD pinout for debugging somewhere on the board
 
 ## Status LEDs
 - Make LEDs as dark as possible and as bright as necessary. Status LEDs should not be bright enough to illuminate anything, only bright enough to recognize they're on.
