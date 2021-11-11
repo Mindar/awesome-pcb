@@ -88,7 +88,7 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 
 
 ## <a name="software"></a>EDA Software
-- [KiCAD](http://kicad-pcb.org/) free and open source EDA software, had some pretty big updates and improvements recently
+- [KiCAD](http://kicad.org/) free and open source EDA software, had some pretty big updates and improvements recently
 - [geda](http://pcb.geda-project.org/) free and open source
 - [Fritzing](https://fritzing.org/) free and open source if you compile it yourself. A binary download costs 9 €.
 - [EAGLE](https://www.autodesk.de/products/eagle/free-download) free for smaller boards
