@@ -1,6 +1,6 @@
-# Awesome PCB
-This list contains awesome pcb-design related things.
-If you know some cool thing that's related to PCB design, feel free to add it. Pull requests welcome.
+# Awesome EDA
+This list contains awesome EDA and pcb-design related things.
+If you know some cool thing that's related to electronics design automation (EDA) or PCB design, feel free to add it. Pull requests welcome.
 
 ## Content
 - [ICs and Components](#components)
@@ -21,16 +21,17 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 - **TPS61021** Step-up that can work from single cell (up to 1.5A)
 - **TLV61220** Step-up that can work from single cell (more efficient, but less current)
 - **ME7660** Cheap charge pump for negative rail (opamp, analog switches, etc)
+- **MIC2920** Low Dropout Regulator with 40mV dropout voltage at light load and 370mV @ 250mA, current and thermal limiting, -20V reverse polarity protection, 60V transient protection
 
 ### <a name="components_computing_storing"></a>Computing/Storage
-- **‎W25Q series** SPI flash memory
-- **‎STM32F103C8T6** Cheap microcontroller, same as on bluepills, 48 Mhz, ADC, I<sup>2</sup>C, SPI, USB
+- **W25Q series** SPI flash memory
+- **STM32F103C8T6** Cheap microcontroller, same as on bluepills, 48 Mhz, ADC, I<sup>2</sup>C, SPI, USB
 - **STM32F417** Bigger and faster alternative for the F103, F417/F427 have crypto hardware, F407 does not, 168 Mhz, ADC/DAC, I<sup>2</sup>C, SPI, USB, Ethernet
 - **STM32F767** Bigger and even faster than the F417, Nucleo Board available
 - **STM32G0 series** Next generation alternative for STM's _F0_ series.
 
 ### <a name="components_mosfet"></a>Mosfets & Switches
-- **‎FQP30N06L** Beefy logic level mosfet V<sub>DSS</sub> 60V, I<sub>D</sub> 32A, R<sub>on</sub> 35mOhm, V<sub>gs<sub>th</sub></sub> < 2.5V, around 10A @ 3.3V V<sub>gs</sub>
+- **FQP30N06L** Beefy logic level mosfet V<sub>DSS</sub> 60V, I<sub>D</sub> 32A, R<sub>on</sub> 35mOhm, V<sub>gs<sub>th</sub></sub> < 2.5V, around 10A @ 3.3V V<sub>gs</sub>
 - **BSS806NE** Super low threshold voltage, small package, V<sub>gs<sub>th</sub></sub> < 0.75V, V<sub>DS</sub> 20V, I<sub>D</sub> 2.3A
 - **LTC2950** Pushbutton On/Off controller, adjustable turn on/off timers, debounced, µController interrupt & turn off pins, 2.7V - 26.4V
 - **IS31FL3741** 39x9 dot matrix led driver, drives 351 leds or 117 rgb leds, I2C interface
@@ -38,6 +39,9 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 - **FQL40N50** Linear Mosfet, but even beefier than the IRFP260
 - **KIA50N03/KIA50N06** Very cost efficient beefy (30/60V and 50A!) and reasonably low Rds(on) N-FET in DPAK case
 
+- **AON7418** High-Current, Low Rds(on), N-Channel Mosfet
+- **IXTA10P50P** Beefy DC-rated P-Channel Mosfet, 500V, 10A (IXTA, ISTH, ISTP, IXTQ for various packages)
+- **FQB8N60C** Similar rating to IXTA10P50P, both used in Agilent SMU
 
 ### <a name="components_mosfet"></a>RF Parts
 - **ADL5544** Wideband RF gain block, 30 MHz - 6 GHz, fixed gain of 17.4 dB
@@ -51,17 +55,19 @@ If you know some cool thing that's related to PCB design, feel free to add it. P
 - **OPA2277** Dual Precision OpAmp, 10µV Offset, 0.1µV/°C Drift, +36V/±18V Supply Range, affordable at ~1€
 
 ### <a name="components_sensors"></a>Sensors
-- MCP9700 Temperature Sensor
+- **MCP9700** Temperature Sensor
 
 ### <a name="components_connectors"></a>Connectors
 Distributors sell all sorts of connectors. There is a special connector for almost any application you could think of. However most of the time you don't need anything special, you just need something that works. Often a simple pin header/socket does the job. But sometimes your applicaiton is just a tiny bit more demanding. The connectors in this category fulfil such purposes. They're not special-purpose, but they do have some advantages over regular pin headers.
-- **Molex 6410 Series** PCB pin headers (mates with **2695 Series** connectors) are polarized connectors that are somewhat compatible with pin headers (both have a 2.54mm spacing). If you use both socket and connector you can't plug things in the wrong way. Connector Part Number: 22012xx1 where xx is the number of pins e.g. 04 to get 4 Pins. Pin header part number is 22272xx1, where xx is the number of pins.
+- **Molex 6410 Series** PCB pin headers (mates with **2695 Series** connectors) are polarized connectors that are somewhat compatible with pin headers (both have a 2.54mm spacing). If you use both socket and connector you can't plug things in the wrong way. Connector Part Number: 22012xx1 where xx is the number of pins e.g. 04 to get 4 Pins. Pin header part number is 22272xx1, where xx is the number of pins. They can also be found under the name _KF2510_ on LCSC. The crimping contacts require [this tool](https://www.reichelt.de/de/en/crimping-pliers-for-psk-contacts-crimpzange-psk-p6844.html?&trstct=pos_0&nbc=1).
 - **Ningbo Kangnex Elec WJ15EDGK-3.81 Series** They are pluggable screwterminals and can deal with quite a bit of current (5A and more per pin). They are also polarized so plugging them in the wrong way is impossible. The PCB-side receptacle is called WJ15EDGRC-3.81-4P, where 4P gives the number of pins (4 in this case). The screw-terminal-plug is called WJ15EDGK-3.81-4P. Once again the 4P means 4 pins. They are also availble in right-angle versions (WJ15EDGVC-3.81-4P and WJ15EDGKA-3.81-4P). There is also a version that can be locked in place with screws (WJEDGKM-3.81-4P and WJ15EDGRM-3.81-4P). They are available in many pin counts at lcsc.com. Phoenix Contact (and many other companies) has a similar product, but their product numbering sucks, so it isn't listed here.
 
 
 
 ### <a name="components_other"></a>Miscellaneous
 - NHD-12232KZ-NSW-BBW-P Graphic LCD, 128x32 Pixels, fairly cheap ~14€, similar form factor to 16x2 text LCDs, 8800/6800 compatible
+- PCA9306 I2C Level shifter IC
+- MT6815 by Magn Tek Fairly affordable, (but difficult to source) absolute magnetic rotary encoder IC
 
 ##  <a name="shops"></a>Part shops
 - [Digikey](https://digikey.com) they have pretty much everything, US based
@@ -96,6 +102,10 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 - Altium Designer, not free or open source
 - Orcad, not free or open source
 - [TopoR](https://www.eremex.com/products/topor/) Free license for small boards of hobbyists, very funny curvy traces autorouter
+- [Wireviz](https://github.com/formatc1702/WireViz) Open source tool to visualize wire harnesses
+- [wavedrom](https://github.com/wavedrom/wavedrom) Open source tool to draw timing diagrams
+- [bitfield](https://github.com/wavedrom/bitfield) open source bit field/register diagram renderer
+
 
 ## <a name="guidelines"></a>PCB Design guidelines/recommendations
 Please note that the following guidelines/recommendations are the result of my own experience designing pcbs.
