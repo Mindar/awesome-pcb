@@ -1,5 +1,5 @@
-# Awesome EDA
-This list contains awesome EDA and pcb-design related things.
+# Awesome PCB
+This list contains awesome pcb-design related things.
 If you know some cool thing that's related to electronics design automation (EDA) or PCB design, feel free to add it. Pull requests welcome.
 
 ## Content
