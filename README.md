@@ -105,6 +105,7 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 - [Wireviz](https://github.com/formatc1702/WireViz) Open source tool to visualize wire harnesses
 - [wavedrom](https://github.com/wavedrom/wavedrom) Open source tool to draw timing diagrams
 - [bitfield](https://github.com/wavedrom/bitfield) open source bit field/register diagram renderer
+- [Salitronic Gerber Analyzer](https://salitronic.com/gerber_analyzer) free, browser-based viewer for Gerber, ODB++ and IPC-2581 with DRC, layer diff and thermal/EMI/impedance analysis (no install)
 
 
 ## <a name="guidelines"></a>PCB Design guidelines/recommendations
