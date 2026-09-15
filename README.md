@@ -84,6 +84,7 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 - [Elecrow](https://www.elecrow.com/services.html)
 - [Seeed](https://www.seeedstudio.com/fusion.html)
 - [PCBWay](pcbway.com)
+- [OminiPCB](https://ominipcb.com/pcb-manufacturing) - PCB manufacturing reference covering materials, stack-up, copper, controlled impedance, surface finish, panelization, and manufacturing considerations.
 
 ## <a name="assembly"></a>PCB Assembly
 - [PCB Shopper](https://pcbshopper.com/) compares many pcb assemblers
