@@ -105,6 +105,7 @@ Distributors sell all sorts of connectors. There is a special connector for almo
 - [Wireviz](https://github.com/formatc1702/WireViz) Open source tool to visualize wire harnesses
 - [wavedrom](https://github.com/wavedrom/wavedrom) Open source tool to draw timing diagrams
 - [bitfield](https://github.com/wavedrom/bitfield) open source bit field/register diagram renderer
+- [AlvaTrails Calculators](https://alvatrails.com/en/calculators) free browser-based electronics calculators (trace width and vias per IPC-2221, microstrip impedance, conductor spacing, voltage dividers, LED resistors, regulator dissipation, crystal load caps, I²C pull-ups and more), no sign-up
 
 
 ## <a name="guidelines"></a>PCB Design guidelines/recommendations
